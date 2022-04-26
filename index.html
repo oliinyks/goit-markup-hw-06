@@ -54,7 +54,7 @@
 						</svg></button>
 
 						<form class="form">
-							<h2 class="title">Оставьте свои данные, мы вам перезвоним</h2>
+							<h2 class="title title-form">Оставьте свои данные, мы вам перезвоним</h2>
 							<div class="form-fild">
 								<label for="user_name">Имя</label>
 								<input type="text" name="username" id="user_name" placeholder=" " autocomplete="name">
@@ -84,10 +84,14 @@
 							<textarea name="comment" id="user_comment" placeholder="Введите текст"></textarea>
 							</div>
 
-							<div class="form-fild">
-								<input type="checkbox" name="mailing_list" value="mailing_list" id="mailing_list">
-								<label for="mailing_list">Соглашаюсь с рассылкой и принимаю <a href="#">Условия договора</a></label>
-							</div>
+								<label  class="form-fild form-checkbox" >
+									<input class="checkbox visually-hidden" type="checkbox" name="mailing_list" value="mailing_list">
+									<span class="form-icon"></span>
+									Соглашаюсь с рассылкой и принимаю <a href="#">Условия договора</a>
+								</label>
+								
+								
+
 
 							<button type="submit" class="button">Отправить</button>
 						</form>
@@ -415,9 +419,11 @@
 				<h3 class="footer-title">Подпишитесь на рассылку</h3>
 				<div class="subscription-box">
 					<form>
-						<input type="email" placeholder="E-mail" autocomplete="email">
+						<div class="footer-form">
+							<input type="email" placeholder="E-mail" autocomplete="email">
+						</div>
 					</form>
-					<button class="footer-button button" type="submit">Подписаться <svg class="button-send" width="24" height="24">
+					<button class="footer-button button" type="submit">Подписаться<svg class="button-send" width="24" height="24">
 							<use href="./img/sprite.svg#send">
 							</use>
 						</svg>

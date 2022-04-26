@@ -26,6 +26,7 @@ p{
 	margin-bottom: 0;
 }
 
+
 body{
 	background-color:var(--primary-bg-color);
 	color: var(--primary-text-color);
@@ -218,9 +219,6 @@ rgba(47, 48, 58, 0.4)),
 	left: 50%;
 	transform: translate(-50%, -50%) scale(1);
 
-	min-width: 528px;
-	min-height: 581px;
-
 	background-color: #ffffff;
 	border-radius: 4px;
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -280,53 +278,137 @@ rgba(47, 48, 58, 0.4)),
 .button:focus{
 	background-color: rgba(24, 140, 232, 1);
 }
+.title-form{
+	font-size: 20px;
+	margin-bottom: 12px;
+	line-height: 0.8;
+	letter-spacing: 0.03em;
+}
 .form{
-	width: 448px;
+	display: inline-block;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 40px;
+	margin: 0;
+	border: none;
 }
 .form-fild{
-
 	display: flex;
 	flex-direction: column;
+	width: 448px;
+	position: relative;
+}
+.form-svg{
+	width: 16px;
+	height: 16px;
+
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	transform: translate(12px, -14px);
+
+	fill: currentColor;
+	color: var(--title-text-color);
+	transition: color 250ms var(--timing-function);
+}
+.form-fild:active .form-svg,
+.form-fild:hover .form-svg,
+.form-fild:focus-within .form-svg
+{
+	color: var(--accent-color);
+}
+.form-fild:nth-child(-n + 4){
 	margin-bottom: 10px;
+}
+.form-fild:nth-child(5){
+	margin-bottom: 20px;
+}
+.form-fild a{
+	color: var(--accent-color);
 }
 .form-fild input{
 	height: 40px;
 	margin: 0;
-	padding: 11px 12px;
+	padding: 11px 0 11px 42px;
+
+	font-size: 12px;
+	line-height: 0.84;
+	letter-spacing: 0.01em;
 
 	border: 1px solid rgba(33, 33, 33, 0.2);
 	border-radius: 4px;
+
+	transition: border-color 250ms var(--timing-function);
 }
 .form-fild textarea{
 	border: 1px solid rgba(33, 33, 33, 0.2);
 	border-radius: 4px;
 	resize: none;
 	min-height: 120px;
-}
-.form-fild textarea::placeholder{
+	padding: 12px 16px;
+
 	font-size: 12px;
 	line-height: 0.84;
 	letter-spacing: 0.01em;
+
+	transition: border-color 250ms var(--timing-function);
+}
+.form-fild:active input,
+.form-fild:hover input,
+.form-fild input:focus,
+.form-fild:active textarea,
+.form-fild:hover textarea,
+.form-fild textarea:focus
+{
+	border: 1px solid var(--accent-color);
+}
+.form-fild textarea::placeholder{
 	color: rgba(117, 117, 117, 0.5);
-	padding: 12px 16px;
 }
 .form-fild label{
-	margin: 4px;
 	text-align: left;
 	font-size: 12px;
-	line-height: 0.85em;
+	line-height: 0.84;
 	letter-spacing: 0.01em;
+}
+.form-fild :not(:last-child){
+	margin-bottom: 4px;
 }
 .form-fild imput[type="checkbox"]{
 	font-size: 14px;
 }
-.form-svg{
-
+.form-checkbox{
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 30px;
+cursor: pointer;
 }
+.form-icon{
+	display: inline-block;
+	width: 16px;
+	height: 15px;
+	margin-right: 8px;
 
+	border: 2px solid var(--title-text-color);
+	border-radius: 2px;
+
+	transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
+}
+.form-fild .form-icon{
+	margin-bottom: 0;
+}
+.checkbox:checked + .form-icon{
+	background-color: var(--accent-color);
+	border-color: var(--accent-color);
+
+	background-image: url('../img/icon-check.svg');
+	background-size: contain;
+	background-origin: border-box;
+}
+.form-fild a{
+	margin-left: 0.07em;
+	text-decoration: underline;
+}
 /* company */
 .company-info{
 	display: flex;
@@ -356,6 +438,7 @@ rgba(47, 48, 58, 0.4)),
 	height: 120px;
 	margin-bottom: 30px;
 }
+
 
 /* activity*/
 .activity-item{
@@ -671,10 +754,36 @@ color: var(--primary-bg-color);
 
 	justify-content: center;
 	margin-left: 12px;
+	padding: 10px 62px 10px 30px;
 }
 .button-send {
 	position: absolute;
-	right: 2;
-	bottom: 20;
-	transform: translate(-2%, -20%);
+	top: 50%;
+	right: 28px;
+	transform: translateY(-50%);
+}
+.footer-form{
+	display: flex;
+	width: 360px;
+	height: 50px;
+	
+}
+.footer-form input{
+	width: 100%;
+	margin: 0;
+	padding: 15px 0 15px 16px;
+	
+
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+	border-radius: 4px;
+
+	font-size: 16px;
+	line-height: 0.8em;
+	letter-spacing: 0.03em;
+	background-color: var(--exyra-bg-color);
+	color: var(--primary-bg-color);
+}
+.footer-form input::placeholder{
+	color: rgba(255, 255, 255, 0.6);	
 }
